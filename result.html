@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub-RESULTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+                .login-container {
+                    max-width: 400px;
+                    margin: 12px auto;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background-color: #f3f3f3;
+                }
+                
+                .login-h2{
+                    text-align:center;
+                }
+                .form-group {
+                    padding-top:10px;
+                    margin-bottom: 10px;
+                }
+                
+                label {
+                  display: block;
+                  margin-bottom: 5px;
+                }
+
+                input[type="text"],
+                input[type="password"] {
+                    width: 100%;
+                    padding:8px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                select[id="semester"]{
+                    width: 100%;
+                    padding:8px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                
+                }
+                
+                input[type="submit"] {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 16px;
+                    background-color: #00ccff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                input[type="submit"]:active{
+                    background-color: #0966fc;
+                }
+                
+                #result-container {
+                    margin-top: 20px;
+                }
+                .password-input {
+                    position: relative;
+                }
+                
+                .toggle-password {
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+                    background-image: url('closed-eye.png'); /* Closed eye icon */
+                    background-size: cover;
+                }
+                
+                #password {
+                    padding-right: 80px; /* Adjust padding to accommodate the eye icon */
+                }
+    </style>
+
+    <!----------------- Header Starts Here----------------->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.jpg" alt="StudentHub Logo">
+        </div>
+        <!---------Name of the Website-------->
+    <div class="web-name">
+            <h2> STUDENT HUB <p class="web-caption">A one stop student platform</p></h2>
+    </div>
+    </div>
+</header>
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="8">
+      Welcome to Student Hub 😇  - Your One-Stop Destination for Education!🚀
+    </marquee>
+</div>
+  <!----------------- Header Ends Here----------------->
+  <nav>
+    <ul>
+        <a style="text-decoration:none;" href="home.html"><li><i class="fa-solid fa-house fa-lg"></i> Home</li></a>
+        <a style="text-decoration:none;" href="results.html" target="_parent"><li><i class="fa-solid fa-square-poll-vertical fa-lg"></i> Results</li></a>    
+        <a style="text-decoration:none;" href="resources.html" target="_parent"><li><i class="fa-solid fa-book fa-lg"></i> Resources</li></a>
+        <a style="text-decoration:none;" href="assignments.html" target="_parent"><li><i class="fa-solid fa-clipboard fa-lg"></i> Assignments</li></a>
+        <a style="text-decoration:none;" href="spotlight.html" target="_parent"><li><i class="fa-solid fa-blog fa-lg"></i> Spotlights</li></a>
+        <a style="text-decoration:none;" href="http://localhost/Demo/timetable.html" target="_parent"><li><i class="fa-solid fa-clock fa-lg"></i> Time-Table</li></a>
+        
+           <a href="http://localhost/Demo/home.html"> Logout </a>
+        
+            
+    </ul>    
+</nav>  
+<body>
+    <main>
+    <br><br><br><br>
+        <center><h1 class="caption"><i class="fa-solid fa-square-poll-vertical fa-sm"></i> Results Portal</h1></center>
+            <div class="login-container">
+                <form action="finalloginmarks.php" class="form-group" method="post">
+                    <div class="form-group">
+                        <label for="rollNo">Roll Number:</label>
+                        <input type="text" name="username" class="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <div class="password-input">
+                            <input type="password" name="password" class="password" required>
+                            <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="semester">Semester:</label>
+                        <select class="semester" id="semester" name="semester">
+                            <option value="semester_11">Semester_11</option>
+                            <option value="semester_12">Semester_12</option>
+                            <option value="semester_21">Semester_21</option>
+                        </select>
+                        <br><br>
+                    </div>            
+                    <input type="submit" value="Login">   
+                </form>                    
+                <div id="result-container" style="display: none;">       
+                </table>
+            </div>
+        </div><br><br><br>
+             <!-----------------Login content Ends Here----------->
+        <script>
+            function togglePasswordVisibility() {
+    var passwordInput = document.querySelector('.password'); // Targeting by class
+    var toggleIcon = document.querySelector('.toggle-password');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.style.backgroundImage = "url('open-eye.png')"; // Open eye icon
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.style.backgroundImage = "url('closed-eye.png')"; // Closed eye icon
+    }
+}
+
+        </script>
+        <br><br><br><br><br><br><br><br>
+</main>
+<!----------------Footer Starts--------------- -->
+<footer>
+    <div>
+        <p>&copy; 2024 StudentHub. All rights reserved.</p>
+    </div>
+</footer>
+<!-------------- Footer Starts------------------------>
+</body>
+</html>

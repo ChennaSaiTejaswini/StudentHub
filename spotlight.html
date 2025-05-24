@@ -1,0 +1,139 @@
+<!--------- Meta HTML Starts -------->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StudentHub-HOME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------Font Awesome Html Link------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+  .story {
+    border-bottom: 2px solid #00ccff; /* Green border */
+    padding: 20px; /* Even padding on all sides */
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden; /* Prevents overflow content */
+    margin-bottom: 20px; /* Spacing between stories */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .story img {
+    width: 150px; /* Adjusted width for the image */
+    height: 150px; /* Adjusted height for the image */
+    border-radius: 50%; /* Circular border */
+    margin-right: 20px; /* Reduced margin for spacing */
+    float: left; /* Float the image to the left */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  .description {
+    display: block;
+    padding: 20px; /* Even padding on all sides */
+    background-color: #eaeaea; /* Lighter background color */
+    color: #333; /* Darker text color */
+    font-size: 16px; /* Adjusted font size */
+    line-height: 1.6; /* Increased line height for readability */
+  }
+  
+ 
+    </style>
+  </head>
+<!--------- Meta HTML End --------> 
+
+
+<!----------------- Header Starts Here----------------->
+<header>
+    <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="StudentHub Logo">
+            </div>
+            <!---------Name of the Website-------->
+        <div class="web-name">
+                <h2> STUDENT HUB <p class="web-caption">A one stop student platform</p></h2>
+        </div>
+    </div>
+</header>  
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="8" scrollDelay="100">
+      Welcome to Student Hub 😇  - Your One-Stop Destination for Education!🚀
+    </marquee>
+</div>
+ 
+    <nav>
+        <ul>
+            <a style="text-decoration:none;" href="home.html"><li><i class="fa-solid fa-house fa-lg"></i> Home</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/result.html" target="_parent"><li><i class="fa-solid fa-square-poll-vertical fa-lg"></i></i> Results</li></a>    
+            <a style="text-decoration:none;" href="resources.html" target="_parent"><li><i class="fa-solid fa-book fa-lg"></i> Resources</li></a>
+            <a style="text-decoration:none;" href="assignments.html" target="_parent"><li><i class="fa-solid fa-clipboard fa-lg"></i> Assignments</li></a>
+            <a style="text-decoration:none;" href="spotlight.html" target="_parent"><li><i class="fa-solid fa-blog fa-lg"></i> Spotlights</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/timetable.html" target="_parent"><li><i class="fa-solid fa-clock fa-lg"></i> Time-Table</li></a>
+        </ul>    
+    </nav>  
+    <!----------------- Header Ends Here----------------->
+
+    <!--------------------- Main Content------------------------- --> 
+<body>
+    <main>
+        <br><br><br>
+        <center><h1 class="caption"><i class="fa-solid fa-blog fa-sm"></i> Spotlights</h1></center>
+        <div class="container">
+            <div class="story">
+                <img src="student1.jfif" alt="Student 1">
+                <br><br>
+                <h2><u>RAMU.D</u> - Awarded with Aegis Graham Bell Prize </h2>
+                <br><br><br>
+                <div id="student1" class="description">
+                    <p>Hello Everyone!
+                        🌟 Honored to share that I've been awarded the prestigious Aegis Graham Bell Award (AGBA) National Talent Hunt Scholarship! 🏆 It's an incredible privilege to have received this recognition from none other than Shri. Nitin Gadkari, our esteemed Central Minister, at the 14th annual Aegis Graham Bell Award ceremony held in New Delhi.
+                        ✨ The event was a celebration of innovation and excellence in the fields of AI, Data Sciences, Analytics, and Cyber Security. It was truly inspiring to be surrounded by individuals who are driving positive change through technology.
+                        📸 Sharing some memorable moments from the ceremony, including the proud moment of receiving the award from Shri. Nitin Gadkari himself. Each snapshot is a testament to the hard work, dedication, and support that has brought me to this milestone.
+                        🌾 Additionally, our Agricultural App garnered significant attention from the jury members! 🚜 Our App revolutionizes farming operations by providing seamless management from planting to selling, all through voice commands using NLP, AI, and Data Science. 🌱
+                        🎓 As part of this recognition, I've been granted a 100% scholarship to enroll in the Postgraduate Program (PGP) in Data Science, AI, and Business Analytics at the prestigious Aegis School of Data Science. I'm excited about the opportunity to further enhance my skills and contribute meaningfully to the technological advancements of tomorrow.
+                        🚀 Grateful for this incredible honor and excited for the journey ahead! Thank you to everyone who has been a part of my journey and supported me along the way. Together, let's continue to innovate, inspire, and make a positive impact in the world. #AegisGrahamBellAward #Innovation #Technology #DataScience #AI #Gratitude #MilestoneMoments
+                        #Aliet #aegis
+                        Activate to view larger image,
+                    </p>
+                </div>
+            </div>
+    
+            <div class="story">
+                <h2><u>Student 2</u></h2>
+                <img src="student2.jpg" alt="Student 2">
+                <br><br><br><br><br><br>
+                <div id="student2" class="description">
+                    <p>Student 2 is a talented artist who has won numerous awards for their creative work. They are passionate about using art as a means of self-expression and social change.</p>
+                </div>
+            </div>
+    
+            <!-- Add more stories as needed -->
+    
+        </div>
+    </main>
+    
+       <!-------- JavaScript for blog page ------------>
+    <script>
+        function toggleDescription(id) {
+            var description = document.getElementById(id);
+            if (description.style.display === "none") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+    
+
+<!----------------Footer Starts--------------- -->
+    <footer>
+        <div>
+            <p>&copy; 2024 StudentHub. All rights reserved.</p>
+        </div>
+    </footer>
+<!-------------- Footer Starts------------------------>
+   
+</body>
+</html>

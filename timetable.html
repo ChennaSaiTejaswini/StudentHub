@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------Font Awesome Html Link------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Timetable Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+                .containerT {
+                    max-width: 400px;
+                    margin: 18px auto;
+                    padding: 28px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background-color: #f3f3f3;
+                }
+                
+                .tt-h2{
+                    margin:36px auto;
+                    text-align:center;
+                    padding-left:20px;
+                }
+                .form {
+                    padding-top:10px;
+                    margin-bottom: 10px;
+                }
+                
+                label {
+                  display: block;
+                  margin-bottom: 5px;
+                }
+                select{
+                    width: 100%;
+                    padding:8px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                
+                }
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 16px;
+                    background-color: #00ccff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button:active{
+                    background-color: #0966fc;
+                }
+                #containerT {
+                    margin-top: 10px;
+                }
+                
+
+.containerT select, .containerT button {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.containerT select:focus, .containerT button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+.containerT button {
+    background-color: #00ccff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom:2px;
+}
+
+.containerT button:active {
+    background-color: #0966fc;
+}
+
+    </style>
+</head>
+
+
+<!----------------- Header Starts Here----------------->
+<header>
+    <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="StudentHub Logo">
+            </div>
+            <!---------Name of the Website-------->
+        <div class="web-name">
+                <h2> STUDENT HUB <p class="web-caption">A one stop student platform</p></h2>
+        </div>
+    </div>
+</header>  
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="8" scrollDelay="100">
+      Welcome to Student Hub 😇  - Your One-Stop Destination for Education!🚀
+    </marquee>
+</div>
+    <nav>
+        <ul>
+            <a style="text-decoration:none;" href="home.html"><li><i class="fa-solid fa-house fa-lg"></i> Home</li></a>
+            <a style="text-decoration:none;" href="result.html" target="_parent"><li><i class="fa-solid fa-square-poll-vertical fa-lg"></i></i> Results</li></a>    
+            <a style="text-decoration:none;" href="resources.html" target="_parent"><li><i class="fa-solid fa-book fa-lg"></i> Resources</li></a>
+            <a style="text-decoration:none;" href="assignments.html" target="_parent"><li><i class="fa-solid fa-clipboard fa-lg"></i> Assignments</li></a>
+            <a style="text-decoration:none;" href="spotlight.html" target="_parent"><li><i class="fa-solid fa-blog fa-lg"></i> Spotlights</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/timetable.html" target="_parent"><li><i class="fa-solid fa-clock fa-lg"></i> Time-Table</li></a>
+        </ul>    
+    </nav>  
+    <!----------------- Header Ends Here----------------->
+<body>
+    <main>
+        <br><br>
+<h1 class="tt-h2"><i class="fa-solid fa-clock fa-sm"></i> TIME TABLE</h1>
+    <div class="containerT">
+        <form action="display_timetable.php" method="POST">
+            <label for="branch">Branch:</label>
+            <select name="branch" id="branch">
+                <option value="IT">INFORMATION TECHNOLOGY</option>
+                <option value="CSE">COMPUTER SCIENCE AND ENGINEERING</option>
+                <!-- Add more branches as needed -->
+            </select><br>
+
+            <label for="semester">Semester:</label>
+            <select name="semester" id="semester">
+                <option value="II">SEM-II</option>
+                <!-- Add more semesters as needed -->
+            </select><br>
+
+            
+            <label for="classno">Classno:</label>
+            <select name="classno" id="classno">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more semesters as needed -->
+            </select><br>
+
+            <button type="submit">Display Timetable</button>
+        </form>
+    </div>
+    <br><br><br><br> <br><br><br><br>
+</main>
+
+ <!----------------Footer Starts--------------- -->
+ <footer>
+    <div>
+        <p>&copy; 2024 StudentHub. All rights reserved.</p>
+    </div>
+</footer>
+<!-------------- Footer Starts------------------------>
+
+
+</body>
+</html>

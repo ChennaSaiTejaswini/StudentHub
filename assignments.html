@@ -1,0 +1,210 @@
+<!--------- Meta HTML Starts -------->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StudentHub-ASSIGNMENTS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------Font Awesome Html Link------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+<style>
+    .main-h1{
+        margin:10px 10px;
+        text-align:center;
+    }
+    .container-A {
+        text-align:center;
+        max-width: 800px;
+        margin: 10px auto;
+        padding: 30px;
+        background-color: #78dcf5;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        padding-bottom:20px;
+        text-align: center;
+        color: #333;
+    }
+    .h1-A{
+        margin: 40px auto;
+        padding: 0px 20px 0 0;
+    }
+    .assignments {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .assignment {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .assignment:hover {
+        transform: translateY(-7px);
+    }
+    .assignment h2 {
+        margin: 0;
+        color: #06122d;
+    }
+    .assignment p {
+        font-weight:10px;
+        margin: 5px 0;
+        color: #df1515;
+    }
+    .assignment a{
+        text-decoration:none;
+        font-weight:bold;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+    }
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+    }
+    .popup p {
+        margin: 20px 20px;
+        color: #ff0505;
+    }
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        cursor: pointer;
+        color: #000000;
+        font-size: 30px;
+    }
+    .close-btn:hover {
+        color: #ffffff;
+    }
+</style>
+</head>
+<!--------- Meta HTML End --------> 
+
+
+<!----------------- Header Starts Here----------------->
+<header>
+    <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="StudentHub Logo">
+            </div>
+            <!---------Name of the Website-------->
+        <div class="web-name">
+                <h2> STUDENT HUB <p class="web-caption">A one stop student platform</p></h2>
+        </div>
+    </div>
+</header>
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="8" scrollDelay="100">
+      Welcome to Student Hub 😇  - Your One-Stop Destination for Education!🚀
+    </marquee>
+</div>
+ 
+    <nav>
+        <ul>
+            <a style="text-decoration:none;" href="home.html"><li><i class="fa-solid fa-house fa-lg"></i> Home</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/result.html" target="_parent"><li><i class="fa-solid fa-square-poll-vertical fa-lg"></i></i> Results</li></a>    
+            <a style="text-decoration:none;" href="resources.html" target="_parent"><li><i class="fa-solid fa-book fa-lg"></i> Resources</li></a>
+            <a style="text-decoration:none;" href="assignments.html" target="_parent"><li><i class="fa-solid fa-clipboard fa-lg"></i> Assignments</li></a>
+            <a style="text-decoration:none;" href="spotlight.html" target="_parent"><li><i class="fa-solid fa-blog fa-lg"></i> Spotlights</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/timetable.html" target="_parent"><li><i class="fa-solid fa-clock fa-lg"></i> Time-Table</li></a>
+        </ul>    
+    </nav>  
+    <!----------------- Header Ends Here----------------->
+     
+
+    <!--------------------- Main Content------------------------- -->
+<!--------------------- Main Content------------------------- -->
+<body>
+    <main>
+        <br><br><br>
+        <h1 class="h1-A"><i class="fa-solid fa-clipboard fa-sm"></i> Assignments</h1>
+        <div class="container-A">
+            <h1>IT(2-1)</h1>
+            <div class="assignments">
+                <div class="assignment" data-subject="DBMS" data-pdf="dbms_assignment.docx" data-deadline="April 10, 2024">
+                    <h2>DBMS Assignment</h2>
+                    <p>Last Date of Submission: April 10, 2024</p>
+                    <a class="open-pdf" href="https://docs.google.com/document/d/1ld9Cc0O4TqBQjtDUMMBsS3CiZc1EOYjv/edit?usp=drive_link&ouid=100791904339452728681&rtpof=true&sd=true" target="_blank">Open PDF</a>
+                </div>
+                <div class="assignment" data-subject="OS" data-pdf="os_assignment.pdf" data-deadline="April 15, 2024">
+                    <h2>OS Assignment</h2>
+                    <p>Last Date of Submission: April 15, 2024</p>
+                    <a class="open-pdf" href="https://drive.google.com/file/d/1IYvl0wmAmTfxx4p_OBcQYlsjaTluZuMu/view?usp=drive_link" target="_blank">Open PDF</a>
+                </div>
+                <!-- Add more assignments here -->
+            </div>
+        </div>
+        <br><br>
+        <div class="container-A">
+            <h1>IT(2-2)</h1>
+            <div class="assignments">
+                <div class="assignment" data-subject="JAVA" data-pdf="java_assignment.doc" data-deadline="April 10, 2024">
+                    <h2>JAVA Assignment</h2>
+                    <p>Last Date of Submission: April 10, 2024</p>
+                    <a class="open-pdf" href="https://docs.google.com/document/d/1Hd9rrSqFsWEOEufXixvD-8b5zRl-B47F/edit?usp=drive_link&ouid=100791904339452728681&rtpof=true&sd=true" target="_blank">Open PDF</a>
+                </div>
+                <div class="assignment" data-subject="ATCD" data-pdf="atcd_assignment.pdf" data-deadline="April 15, 2024">
+                    <h2>ATCD Assignment</h2>
+                    <p>Last Date of Submission: April 15, 2024</p>
+                    <a class="open-pdf" href="https://drive.google.com/file/d/1VyL7svwERtOclR-69ncvtXb-Nm46MU5V/view?usp=drive_link" target="_blank">Open PDF</a>
+                </div>
+                <!-- Add more assignments here -->
+            </div>
+        </div>
+        <br><br>
+    </main>
+
+    <div class="overlay"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const openPdfLinks = document.querySelectorAll('.open-pdf');
+
+            openPdfLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const pdfUrl = this.getAttribute('href');
+                    window.open(pdfUrl, '_blank');
+                });
+            });
+        });
+    </script>
+</body>
+ <!----------------Footer Starts--------------- -->
+ <footer>
+    <div>
+        <p>&copy; 2024 StudentHub. All rights reserved.</p>
+    </div>
+</footer>
+<!-------------- Footer Starts------------------------>
+
+
+</html>

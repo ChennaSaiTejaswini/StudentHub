@@ -1,0 +1,372 @@
+<!--------- Meta HTML Starts -------->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StudentHub-HOME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------Font Awesome Html Link------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+                .containerR {
+                    max-width: 400px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background-color: #f3f3f3;
+                }
+                
+                form {
+                    padding-top:10px;
+                    margin-bottom: 10px;
+                }
+                
+                label {
+                  display: block;
+                  margin-bottom: 10px;
+                }
+                select{
+                    width: 100%;
+                    padding:10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin-bottom: 5px;
+                
+                }
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 16px;
+                    background-color: #00ccff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button:active{
+                    background-color: #0966fc;
+                }
+
+#content {
+  border: 1px solid #ccc;
+  padding: 40px;
+  margin-top: 20px;
+  min-height: 100px;
+
+}
+
+.a-link {
+    color: #007bff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    background-color: #f8f9fa; /* Background color */
+    padding: 10px 30px; /* Padding */
+    margin: 5px; /* Margin */
+    border: 1px solid #007bff; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    display: inline-block; /* Display as block */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Cursor style */
+}
+
+.a-link:hover {
+    background-color: #007bff; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+</style>
+</head>
+<!--------- Meta HTML End --------> 
+
+<!----------------- Header Starts Here----------------->
+<header>
+    <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="StudentHub Logo">
+            </div>
+            <!---------Name of the Website-------->
+        <div class="web-name">
+                <h2> STUDENT HUB <p class="web-caption">A one stop student platform</p></h2>
+        </div>
+    </div>
+</header>  
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="8" scrollDelay="100">
+      Welcome to Student Hub 😇  - Your One-Stop Destination for Education!🚀
+    </marquee>
+</div>
+ 
+    <nav>
+        <ul>
+            <a style="text-decoration:none;" href="home.html"><li><i class="fa-solid fa-house fa-lg"></i> Home</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/result.html" target="_parent"><li><i class="fa-solid fa-square-poll-vertical fa-lg"></i></i> Results</li></a>    
+            <a style="text-decoration:none;" href="resources.html" target="_parent"><li><i class="fa-solid fa-book fa-lg"></i> Resources</li></a>
+            <a style="text-decoration:none;" href="assignments.html" target="_parent"><li><i class="fa-solid fa-clipboard fa-lg"></i> Assignments</li></a>
+            <a style="text-decoration:none;" href="spotlight.html" target="_parent"><li><i class="fa-solid fa-blog fa-lg"></i> Spotlights</li></a>
+            <a style="text-decoration:none;" href="http://localhost/Demo/timetable.html" target="_parent"><li><i class="fa-solid fa-clock fa-lg"></i> Time-Table</li></a>
+        </ul>    
+    </nav>  
+    <!----------------- Header Ends Here----------------->
+<body>
+  <main>
+    <br><br><br>
+  <center><h1 class="caption"><i class="fa-solid fa-book fa-xs"></i> Resources</h1></center>
+  <div class="containerR">
+    <form id="resourceForm">
+      <label>Resource Type</label>
+      <select id="resourceType" name="resourceType">
+        <option value="questionPapers">Question Papers</option>
+        <option value="syllabus">Syllabus</option>
+        <option value="notes">Notes</option>
+        <option value="labMaterials">Lab Materials</option>
+      </select>
+
+      <label>Branch:</label>
+      <select id="branch" name="branch">
+        <option value="it">Information Technology</option>
+      <!-- Add more options for other branches -->
+      </select>
+
+      <label for="semester">Semester:</label>
+      <select id="semester" name="semester">
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+        <!-- Add more options for other semesters -->
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div id="content">
+    <!-- Content will be displayed here -->
+    <h2>Links Available Here👇</h2>
+    <br><br>
+    <ul id="subjectLinks">
+      <!-- Links for subjects will be dynamically generated here -->
+      <br>
+      <br>
+    </ul>
+  </div>
+  <br><br><br>
+</main>
+
+  <script>
+   document.getElementById('resourceForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Get selected options
+    var resourceType = document.getElementById('resourceType').value;
+    var branch = document.getElementById('branch').value;
+    var semester = document.getElementById('semester').value;
+  
+    // Determine content based on selected options
+    var subjectLinks = document.getElementById('subjectLinks');
+    subjectLinks.innerHTML = ''; // Clear previous links
+  
+    switch (resourceType) {
+      case 'questionPapers':
+        generateSubjectLinks(subjectLinks, branch, semester, "Question Papers");
+        break;
+      case 'syllabus':
+        generateSubjectLinks(subjectLinks, branch, semester, "Syllabus");
+        break;
+      case 'onlineBits':
+        generateSubjectLinks(subjectLinks, branch, semester, "Online Bits");
+        break;
+      case 'notes':
+        generateSubjectLinks(subjectLinks, branch, semester, "Notes");
+        break;
+      case 'referenceBooks':
+        generateSubjectLinks(subjectLinks, branch, semester, "Reference Textbooks");
+        break;
+      case 'labMaterials':
+        generateSubjectLinks(subjectLinks, branch, semester, "Lab Materials");
+        break;
+      default:
+        subjectLinks.innerHTML = "No content available";
+    }
+  });
+
+
+ 
+
+function generateSubjectLinks(containerR, branch, semester, resourceType) {
+    containerR.innerHTML = ''; // Clear previous links
+  // Define subject arrays for different branches and semesters
+    var subjects;
+    if (branch === 'it' && semester === '1') {
+      if (resourceType === "Question Papers") {
+        subjects = {
+      "M-I": "https://drive.google.com/drive/folders/18HT60TWafSswalX7WcUHCpLSh0T5NNPT?usp=sharing",
+      "ENGLISH": "https://drive.google.com/drive/folders/1635ohyB6MLAmsVy3J9yTCGYnWd9Kwumf?usp=drive_link",
+      "PPSUC":"https://drive.google.com/drive/folders/14v-yYmHoCCh66Y_jZLrXXAm8vWiCyoDD?usp=drive_link",
+      "PHYSICS": "https://drive.google.com/drive/folders/1itHfDTCrlLFuZSr55aiPGJhRJrBNGA60?usp=drive_link"
+        };
+      } 
+      else if(resourceType ==="Syllabus"){
+        subjects={
+         "SYLLABUS":"https://drive.google.com/file/d/1Uy6ub8BJyin-pIYQorKnU49Il3pkebtS/view?usp=drive_link"
+        }
+      }
+      else if (resourceType === "Notes") {
+        subjects = {
+      "M-I": "https://drive.google.com/drive/folders/1VoXIAhSuk3qkMnOCiNLI_bS5vQUaf4ee?usp=drive_link",
+      "ENGLISH": "https://drive.google.com/drive/folders/1_KbRzWh5QBPKuQzG7BCQo3jGMQ_5NMr_?usp=drive_link",
+      "PPSUC":"https://drive.google.com/drive/folders/1NIYnRmFzzS0-f9Kh089TMZGPgMYi4MDr?usp=drive_link",
+      "PHYSICS": "https://drive.google.com/drive/folders/1Yg-jgFoSsQEupWQywUrqXUhfAGeOWb0-?usp=drive_link"
+        };
+      }
+      else if(resourceType ==="Lab Materials"){
+        subjects={
+       "PHYSICS LAB":"https://drive.google.com/drive/folders/1vHtGPh6oB1KMJ2FpZGPAxqtUsdIzyUFz?usp=drive_link",
+       "WORKSHOP LAB":"https://drive.google.com/drive/folders/1TqrbEdLj3CwwR-QcL-Nc4AmXol6N42oL?usp=drive_link",
+       "PPSUC LAB":"https://drive.google.com/drive/folders/1aT3BtxUztpUPsQQX1BweDnpeuOAVvBzO?usp=drive_link"
+        }
+      }
+  } 
+    else if (branch === 'it' && semester === '2') {
+      if (resourceType === "Question Papers") {
+        subjects = {
+        "M-II":"https://drive.google.com/drive/folders/13Sk0Rp3nhS52I1xPcbCWk51IdNd6PjLz?usp=drive_link",
+        "CHEMISTRY":"https://drive.google.com/drive/folders/10CSPLn3YThOtv7_DAat0msnDJPWmqaJx?usp=drive_link",
+        "PYTHON":"https://drive.google.com/drive/folders/1uRPRPK1HeVVe0du6Hy4sQATHn2iUbvdz?usp=drive_link",
+        "DS":"https://drive.google.com/drive/folders/1UkvLr_AwcNs1p8UC111iXGhdMBx4uN99?usp=drive_link",
+        "CO":"https://drive.google.com/drive/folders/1oj664pLUiIKyGfJs_HQlkLi8rFkabwh6?usp=drive_link"
+        };
+      } 
+      else if(resourceType ==="Syllabus"){
+        subjects={
+         "SYLLABUS":"https://drive.google.com/file/d/1Jp0RecgtcUcpljCB4Kt0ik7SoGB63Uiq/view?usp=drive_link"
+        }
+      }
+      else if (resourceType === "Notes") {
+        subjects = {
+        "M-II":"https://drive.google.com/drive/folders/1aD_V_JLzL3DVw-lMwa2i8ccVRCW2E739?usp=drive_link",
+        "CHEMISTRY":"https://drive.google.com/drive/folders/13Q9Nh4lLara8hJ0jcFvumQFaaQBPQ1a9?usp=drive_link",
+        "PYTHON":"https://drive.google.com/drive/folders/1qlW8qqQRUhcs_mavG7oZVhLsnUKqGR_5?usp=drive_link",
+        "DS":"https://drive.google.com/drive/folders/1eZ_z8YlDg8kt1dAMI1mpbIRQvEXgW0bw?usp=drive_link",
+        "CO":"https://drive.google.com/drive/folders/1k0rtsVVTqOaQOt6t0NV-PcPRnKeVti-m?usp=drive_link"
+        };
+      }
+      else if(resourceType ==="Lab Materials"){
+        subjects={
+        "CHEMISTRY LAB":"https://drive.google.com/file/d/1KmZIelPG0PVcO_oG2L55LEdI901T2jj1/view?usp=drive_link",
+        "PYTHON LAB":"https://drive.google.com/file/d/1e5g21Yh7Z-CbcRI_H_v2Gb5Y1t-toa8u/view?usp=drive_link",
+        "DS LAB":"https://drive.google.com/file/d/1yieKbzRg93hCSKaKBpBgNmf3nq6rbVQz/view?usp=drive_link",
+        }
+      }
+      
+      
+      // Add more conditions for other resource types if needed
+    } 
+    // Add more conditions for other branches and semesters
+    else if (branch === 'it' && semester === '3') {
+      if (resourceType === "Question Papers") {
+        subjects = {
+           "M-III":"https://drive.google.com/file/d/1ICQ3D2BR3Bb69pXLaq8v98fggvkqCuu0/view?usp=sharing",
+           "DMGT":"https://drive.google.com/file/d/1V4vq5H4ITmPpty0wZWqp58P-uGuRk3X_/view?usp=drive_link",
+           "DBMS":"https://drive.google.com/file/d/1tCHiPqn1gndLVc4yFpQMM8dENCjGZfwa/view?usp=drive_link",
+           "OS":"https://drive.google.com/file/d/1rKllTSQ3jbf9JtmCMJV51QI6ef7QXdyu/view?usp=drive_link",
+           "OOP CPP":"https://drive.google.com/file/d/14O3vWIf0SUap-XJu-NGzTE91MkOIysoJ/view?usp=drive_link"
+        };
+      } 
+      else if(resourceType ==="Syllabus"){
+        subjects={
+         "SYLLABUS":"https://drive.google.com/file/d/1VcACwmXAlQq4RLPSSzragfZWGhb4aD0E/view?usp=drive_link"
+        }
+      }
+      else if (resourceType === "Notes") {
+        subjects = {
+           "M-III":"https://drive.google.com/drive/folders/178Q2o-FCY7F0bzXR-TnH-qFQO6B2V8N_?usp=sharing",
+           "DMGT":"https://drive.google.com/drive/folders/1K5A-ZzelR-uAQmPGrbOKTGJujV6MCZXq?usp=drive_link",
+           "DBMS":"https://drive.google.com/drive/folders/1zb3ihoR3dKo1XNuyfMsZ4kEmXdhfXWx8?usp=drive_link",
+           "OS":"https://drive.google.com/drive/folders/1ZYASw9_M3ybIwODeCg8ssESrikqARckj?usp=drive_link",
+           "OOP CPP":"https://drive.google.com/drive/folders/1i-phOi4c1DdoW8D9VZWge_IOrnzUG_QU?usp=drive_link"
+        };
+      }
+      else if(resourceType ==="Lab Materials"){
+        subjects={
+           "DBMS LAB":"https://drive.google.com/drive/folders/1zKu8PXfs4v3OXPyLO9AWKEXVF7WBpLTc?usp=drive_link",
+           "SOC LAB":"https://drive.google.com/drive/folders/11AwGpBSrx7wU-24oG7XNhxas7rNc8G-J?usp=drive_link",
+           "OS LAB":"https://drive.google.com/drive/folders/1AwFIWxil6nAP-B7Gz421uE1sJ9QSbSIt?usp=drive_link",
+           "OOP CPP LAB":"https://drive.google.com/drive/folders/11XP6B4oPr18fdp7treT5bA4ezQO3QgMN?usp=drive_link"
+        }
+      }
+      
+      
+      // Add more conditions for other resource types if needed
+    } 
+    else if (branch === 'it' && semester === '4') {
+      if (resourceType === "Question Papers") {
+        subjects = {
+      "MEFA": "https://drive.google.com/drive/folders/1lCCLvGLv3Ezd772kk7Fey049wcAllVDQ?usp=sharing",
+      "ATCD": "https://drive.google.com/drive/folders/1wg9SU9qODmL4oW8bX6xs7EjM4loZ-5Oe?usp=sharing",
+      "PSE": "https://drive.google.com/drive/folders/1oBd4awjMpE0l3vaf598WOL8yn0MZAKN-?usp=sharing",
+      "JAVA": "https://drive.google.com/drive/folders/1qXILIes7US8gTrASR9poEmSV2yAT-P01?usp=sharing",
+      "R": "https://drive.google.com/drive/folders/1kBb-kf8teDHLACi9XxrP19yLuSQGJ1Aq?usp=sharing"
+        };
+      } 
+      else if(resourceType ==="Syllabus"){
+        subjects={
+         "SYLLABUS":"https://drive.google.com/file/d/1UNSbCmW09t3fGZyKmB7aT5R7C6ip7GCV/view?usp=sharing"
+        }
+      }
+      else if (resourceType === "Notes") {
+        subjects = {
+      "MEFA": "https://drive.google.com/drive/folders/1ozun1l5kdriN9u7M_Rlf1Rv7OiTETEEo?usp=sharing",
+      "ATCD": "https://drive.google.com/drive/folders/1RFKc7-SScZpqCR5rmpXRyMMi5UfNbcDI?usp=sharing",
+      "PSE": "https://drive.google.com/drive/folders/1et3sKy9TUgVQi36XN_Fy7_iJL0rUGzTj?usp=sharing",
+      "JAVA": "https://drive.google.com/drive/folders/1T5IveJ-s-RGnzV19_ZV0eX_xLBNn_kYt?usp=sharing",
+      "R": "https://drive.google.com/drive/folders/1DPzV7_Dl4G8xMXeILqZPN22ZIoFPUt2i?usp=sharing"
+        };
+      }
+      else if(resourceType ==="Lab Materials"){
+        subjects={
+         "UML":"https://drive.google.com/file/d/1ZfFCkl4VTE1U545DwJuMj1hpD6EAs6Ak/view?usp=sharing",
+         "FOSS":"https://drive.google.com/drive/folders/1J7A3Go0qBemuUb_oYrAjInn0jJcCd5Ax?usp=drive_link",
+         "MONGODB":"https://drive.google.com/file/d/1tpBNO20fq3AuZVIurGqkY5Noyjq8uvKS/view?usp=sharing",
+         "JAVA":"https://drive.google.com/file/d/1wdopWFjn3OfPaI39UNEgzZ7S4LnOQbv4/view?usp=drive_link"
+        }
+      }
+      
+      
+      // Add more conditions for other resource types if needed
+    } 
+   
+  
+  
+    
+ // Generate links for each subject
+ if (subjects) {
+      Object.keys(subjects).forEach(function(subject) {
+        var link = document.createElement('a');
+        link.classList.add('a-link');
+        link.href = subjects[subject];
+        link.textContent = subject + " "  + " for " + branch + ", Semester " + semester;
+        var listItem = document.createElement('li');
+        listItem.appendChild(link);
+        containerR.appendChild(listItem);
+      });
+    } else {
+      containerR.innerHTML = "No subjects available for the selected branch and semester.";
+    }
+  }
+  </script>
+  
+  </body>
+<!----------------Footer Starts--------------- -->
+<footer>
+  <div>
+      <p>&copy; 2024 StudentHub. All rights reserved.</p>
+  </div>
+</footer>
+<!-------------- Footer Starts------------------------>
+</html>
+    
