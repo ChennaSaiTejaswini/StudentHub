@@ -30,7 +30,7 @@
 
 - **Frontend**: HTML, CSS
 - **Backend**: PHP
-- **Database**: MySQL (if used)
+- **Database**: MySQL 
 
 
 
